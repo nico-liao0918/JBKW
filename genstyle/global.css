@@ -5,6 +5,11 @@
     padding: 0;
 }
 
+body.dark * {
+    background-color: black;
+    color: white;
+}
+
 header {
     margin: 5px;
     padding: 5px;
@@ -19,6 +24,12 @@ header h1 {
     color: white;
 }
 
+header h1 a {
+    color: white;
+    text-decoration: none;
+}
+
+
 header p {
     margin: 10px;
     padding: 10px;
@@ -30,11 +41,6 @@ header a {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    text-decoration: none;
-}
-
-header h1 a {
-    color: white;
     text-decoration: none;
 }
 
@@ -63,6 +69,11 @@ nav ul li {
     padding: 5px;
     display: inline;
 }
+
+body.dark {
+    background-color: black;
+}
+
 
 main {
     color: black;
@@ -95,6 +106,9 @@ main ul li {
     text-decoration: none;
 }
 
+footer.dark {
+    background-color: black;
+}
 
 footer {
     text-align: center;
@@ -112,7 +126,6 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
 
 .button {
     display: inline-block;
