@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta 
@@ -26,7 +26,8 @@
             </div>
             <div>
                 <nav>
-                    <ul>
+                    <button id="menu-toggle">☰ Menu</button>
+                    <ul id="menu-list" class="hidden">
                         <li>
                             <a href="index.html">
                                 Home
@@ -57,9 +58,19 @@
                 <button id="dark-toggle" class="button">Toggle Dark Mode</button>
             </section>
             <section>
+                <div id="popup" class="popup_hidden">
+                  <div class="popup-box">
+                    <h3>Stay in the Loop!</h3>
+                    <p>Subscribe to receive updates, newsletters, newspapers, or announcements.</p>
+                    <button onclick="location.href='subscribe.html'">Yes, Sign Me Up</button>
+                    <button onclick="closePopup()">No, Thanks</button>
+                  </div>
+                </div>
+            </section>
+            <section>
                 <div>
                     <img 
-                        src="/assets/james_liao_profile.jpg" 
+                        src="assets/james_liao_profile.jpg" 
                         alt="Profile Picture" 
                         width="200" 
                         height="200"
@@ -106,5 +117,7 @@
             </section>
         </footer>
         <script src="toggle.js"></script>
+        <script src="menu.js"></script>
+        <script src="popup.js" defer></script>
     </body>
 </html>
