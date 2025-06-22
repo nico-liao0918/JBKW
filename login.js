@@ -5,37 +5,35 @@ async function sha256(text) {
   const data = encoder.encode(text);
   const hashBuffer = await crypto.subtle.digest("SHA-256", data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
-  return hashHex;
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
 }
 
 document.getElementById("loginForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const usernameInput = document.getElementById("username").value.trim();
-  const passwordInput = document.getElementById("password").value;
-
-  const hashedPassword = await sha256(passwordInput);
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value;
+  const hash = await sha256(password);
 
   try {
     const res = await fetch("premium.json");
     const users = await res.json();
 
-    const match = users.find(u =>
-      u.Username === usernameInput && u.Password === hashedPassword
-    );
+    const match = users.find(u => u.Username === username && u.Password === hash);
 
-    const msg = document.getElementById("message");
     if (match) {
-      msg.textContent = "✅ Login successful!";
-      msg.style.color = "green";
-      // You can redirect or load premium content here
+      // Save session
+      localStorage.setItem("username", username);
+      localStorage.setItem("passwordHash", hash);
+      localStorage.setItem("loginTime", Date.now());
 
+      // Redirect to content
+      window.location.href = "content.html";
     } else {
-      msg.textContent = "❌ Invalid username or password.";
-      msg.style.color = "red";
+      document.getElementById("message").textContent = "❌ Invalid username or password.";
     }
   } catch (err) {
-    console.error("Error loading user file", err);
+    console.error("Login error:", err);
+    alert("Could not load user list.");
   }
 });
