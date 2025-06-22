@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta 
+            name="viewport" 
+            content="width=device-width, initial-scale=1.0"
+        />
+        <!--
+        <meta http-equiv="refresh" content="0; url=/error/error.html">
+        -->
+        <title>JBK WEBSITE</title>
+        <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="genstyle/global.css">
+    </head>
+
+    <body>
+        <header>
+            <div>
+                <h1>
+                    <a href="index.html">
+                        James Books Website
+                    </a>
+                </h1>
+            </div>
+            <div>
+                <nav>
+                    <button id="menu-toggle">☰ Menu</button>
+                    <ul id="menu-list" class="hidden">
+                        <li>
+                            <a href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="book.html">
+                                Books
+                            </a>
+                        </li>
+                        <li>
+                            <a href="author.html">
+                                Author
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <button id="dark-toggle" class="button">Toggle Dark Mode</button>
+            </section>
+            <section>
+                <div id="popup" class="popup_hidden">
+                  <div class="popup-box">
+                    <h3>Stay in the Loop!</h3>
+                    <p>Subscribe to receive updates, newsletters, newspapers, or announcements.</p>
+                    <button onclick="location.href='subscribe.html'">Yes, Sign Me Up</button>
+                    <button onclick="closePopup()">No, Thanks</button>
+                  </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <img 
+                        src="assets/james_liao_profile.jpg" 
+                        alt="Profile Picture" 
+                        width="200" 
+                        height="200"
+                    />
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h1>JAMES DOMINIC LIAO</h1>
+                    <p class="bio">
+                        Hi! I’m James Dominic Liao, a passsionate in writing stories, scenarios, and books/novels.
+                        This is for my creative and writing hobby. Hope you enjoy these stories or books/novels. 
+                        However the Scenarios will be published on a different website. Hope you will be patient for it 
+                        to be public. 
+                    </p>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h2>Connect with Me</h2>
+                    <p>If you’d like to reach out, you can find me on:</p>
+                    <ul>
+                        <li>
+                            <a 
+                                href="mailto:jamesliao09@yahoo.com"
+                                class="button">
+                                    Email
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <section>
+                <div>
+                    <p>
+                        Copyright &copy; 2025 
+                        James Books Website. 
+                        All Rights Reserved.
+                    </p>
+                </div>
+            </section>
+        </footer>
+        <script src="toggle.js"></script>
+        <script src="menu.js"></script>
+        <script src="popup.js" defer></script>
+    </body>
+</html>
