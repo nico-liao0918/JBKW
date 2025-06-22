@@ -18,8 +18,15 @@ document.getElementById("loginForm").addEventListener("submit", async function (
   try {
     const res = await fetch("premium.json");
     const users = await res.json();
-
+    
     const match = users.find(u => u.Username === username && u.Password === hash);
+
+    if (urlUser && urlUser !== username) {
+      alert("🚫 Access denied: this link isn't for you.");
+      logout();
+    }
+
+    console.log("User from URL:", urlUser);
 
     if (match) {
       // Save session
@@ -28,7 +35,8 @@ document.getElementById("loginForm").addEventListener("submit", async function (
       localStorage.setItem("loginTime", Date.now());
 
       // Redirect to content
-      window.location.href = "content.html";
+      window.location.href = 'content.html?user=${encodeURIComponent(username)}';
+      
     } else {
       document.getElementById("message").textContent = "❌ Invalid username or password.";
     }
