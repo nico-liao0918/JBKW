@@ -22,18 +22,15 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     const match = users.find(u => u.Username === username && u.Password === hash);
 
     if (match) {
-      // Save session
       localStorage.setItem("username", username);
       localStorage.setItem("passwordHash", hash);
       localStorage.setItem("loginTime", Date.now());
-
-      // Redirect to content
       window.location.href = "content.html";
     } else {
       document.getElementById("message").textContent = "❌ Invalid username or password.";
     }
   } catch (err) {
-    console.error("Login error:", err);
+    console.error("Error loading premium.json", err);
     alert("Could not load user list.");
   }
 });
