@@ -7,9 +7,7 @@
             name="viewport" 
             content="width=device-width, initial-scale=1.0"
         />
-        <!--
         <meta http-equiv="refresh" content="0; url=/error/error.html">
-        -->
         <title>JBK WEBSITE</title>
         <link rel="icon" href="favicon/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="genstyle/global.css">
@@ -69,18 +67,20 @@
             </section>
             <section>
                 <div>
-                    <h2>Welcome to the Website</h2>
-                </div>
-                <div>
-                    <p>Welcome to the Website!</p>
+                    <form id="loginForm">
+                        <label for="username"></label>
+                        <input type="text" id="username" placeholder="Username" required>
+                    
+                        <label for="password"></label>
+                        <input type="password" id="password" placeholder="Password" required>
+                    
+                        <button type="submit">Login</button>
+                    </form>
                 </div>
             </section>
             <section>
                 <div>
-                    <h2>Explore the Website</h2>
-                </div>
-                <div>
-                    <p>You may use the navigation above for your convenience.</p>
+                    <p id="message"></p>
                 </div>
             </section>
         </main>
@@ -95,20 +95,10 @@
                     </p>
                 </div>
             </section>
-            <section>
-                <div>
-                    <p>
-                        <a 
-                            href="https://nico-liao0918.github.io/JRAPW/"
-                            class="button">
-                                Go back to JRAP Website
-                        </a>
-                    </p>
-                </div>
-            </section>
         </footer>
         <script src="toggle.js"></script>
         <script src="menu.js"></script>
+        <script src="login.js"></script>
         <script src="popup.js" defer></script>
     </body>
 </html>
