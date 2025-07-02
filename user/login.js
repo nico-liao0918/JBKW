@@ -21,10 +21,15 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
     const match = users.find(u => u.Username === username && u.Password === hash);
 
+    const saved = localStorage.getItem("activeUser")
+    const active = sessionStorage.getItem("activeUser")
+
     if (match) {
       localStorage.setItem("username", username);
       localStorage.setItem("passwordHash", hash);
       localStorage.setItem("loginTime", Date.now());
+      localStorage.setItem("activeUser", saved)
+      sessionStorage.setItem("activeUser", active)
       window.location.href = "dashboard.html";
     } else {
       document.getElementById("message").textContent = "❌ Invalid username or password.";

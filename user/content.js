@@ -19,11 +19,11 @@ function checkAccess() {
   const loginTime = parseInt(localStorage.getItem("loginTime"));
 
   if (!username || !loginTime) {
-    logout(); // Not logged in
+    logout();
   }
 
   const timePassed = Date.now() - loginTime;
-  const timeLimit = 7 * 24 * 60 * 60 * 1000; // 7 days in ms
+  const timeLimit = 7 * 24 * 60 * 60 * 1000;
 
   if (timePassed > timeLimit) {
     alert("⏰ Your 7-day access has expired.");
